@@ -2,7 +2,7 @@
 
 Little sample to write Durable Functions (PowerShell)
 
-For use this sample do you need:
+For use this sample you will need:
 
 - PowerShell 7
 - Azure Functions core tools >= 3
@@ -42,10 +42,10 @@ az functionapp create --name $funcAppDefinition.Name `
                       --functions-version $funcAppDefinition.Version
 ```
 
-If you use this sample in Azure, you can create identity for your function app interact with resources above your subscription then you can use follow commands:
+If you use this sample in Azure, you can create identity for your function app interact with resources in your subscription then you can use follow commands:
 
 ```powershell
 
-az functionapp identity assign  --resource-group $resourceGroupDef.Name --name  $funcAppDefinition.Name  --role contributor --scope "/subscriptions/{YourSubID}/resourceGroups/demoFuncApp"
+az functionapp identity assign  --resource-group $resourceGroupDef.Name --name  $funcAppDefinition.Name  --role contributor --scope "/subscriptions/{YouSubscriptionID}"
 
 ```
