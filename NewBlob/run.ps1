@@ -7,5 +7,5 @@ $context =  (New-AzStorageContext -StorageAccountName $name.StorageAccountName -
 [array]$container = @()
 $blobs.Split(",") | ForEach-Object -process {
     [array]$container += New-AzStorageContainer -name $_ -Context $context -Permission blob
-    $container
-}
+} -end {$container}
+

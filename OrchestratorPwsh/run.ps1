@@ -2,7 +2,7 @@ using namespace System.Net
 param($Context)
 $Context
 $output = @()
-$newResource = Invoke-ActivityFunction -FunctionName 'NewAzResourceGroup' -Input 'helloworld'
+$newResource = Invoke-ActivityFunction -FunctionName 'NewAzResourceGroup' -Input $Context.Input
 $output += $newResource
 $newStgAcc = Invoke-ActivityFunction -FunctionName 'NewStgAccount' -Input $($newResource | ConvertTo-Json -Depth 5)
 $output += $newStgAcc 
