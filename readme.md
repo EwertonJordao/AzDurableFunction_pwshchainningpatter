@@ -43,3 +43,9 @@ az functionapp create --name $funcAppDefinition.Name `
 ```
 
 If you use this sample in Azure, you can create identity for your function app interact with resources above your subscription then you can use follow commands:
+
+```powershell
+
+az functionapp identity assign  --resource-group $resourceGroupDef.Name --name  $funcAppDefinition.Name  --role contributor --scope "/subscriptions/{YourSubID}/resourceGroups/demoFuncApp"
+
+```
